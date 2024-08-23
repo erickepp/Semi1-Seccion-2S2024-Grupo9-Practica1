@@ -327,14 +327,14 @@ call UpdateCancion(3,"cancion33","url foto333","duracio333n","artista cualquiera
 call DeleteCancion(3);
 
 -- id cancion , id usuario
-call InsertMeGusta(1,1);
-call InsertMeGusta(4,1);
+call InsertMeGusta(1,3);
+call InsertMeGusta(3,3);
 call InsertMeGusta(1,2);
 
 
 call DeleteMeGusta(2,1);
 
-call InsertPlaylist("mi playlist1","descripcion","foto fondo","1");
+call InsertPlaylist("mi playlist1","descripcion","foto fondo","3");
 call InsertPlaylist("mi playlist2","descripcion2","foto fondo2","2");
 
 call UpdatePlaylist(2,"mi playlist2222","descripcion2222","foto fondo22222");
@@ -342,8 +342,8 @@ call UpdatePlaylist(2,"mi playlist2222","descripcion2222","foto fondo22222");
 call DeletePlaylist(2);
 
 -- id cancion, id playlist
-call InsertListaCanciones(1,3);
-call InsertListaCanciones(3,3);
+call InsertListaCanciones(1,2);
+call InsertListaCanciones(3,2);
 
 -- id cancion, id playlist
 call DeleteListaCanciones(2,1);
