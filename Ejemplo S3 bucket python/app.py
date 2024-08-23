@@ -3,8 +3,8 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
 # Configura el nombre de tu bucket y el archivo a cargar
 BUCKET_NAME = 'tarea2-202002042'
-FILE_PATH = 'messi2.jpg'  # Cambia esto a la ruta de tu archivo
-OBJECT_NAME = 'imagenes/messi.jpg'  # Nombre con el que se guardará en S3
+FILE_PATH = 'Bad Bunny - Moscow Mule Un Verano Sin Ti.mp3'  # Cambia esto a la ruta de tu archivo
+OBJECT_NAME = 'Canciones/Bad Bunny - Moscow Mule Un Verano Sin Ti.mp3'  # Nombre con el que se guardará en S3
 
 # Configura tus credenciales (opcional si ya están en el archivo de credenciales)
 AWS_ACCESS_KEY = 'AKIAQFLZDJO2QQ5D5FMN'
