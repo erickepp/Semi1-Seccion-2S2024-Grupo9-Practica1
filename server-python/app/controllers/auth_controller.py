@@ -1,5 +1,5 @@
+import bcrypt
 from flask import request, jsonify
-from werkzeug.security import check_password_hash
 from app.models.user import User
 
 def authenticate():
@@ -18,7 +18,7 @@ def authenticate():
             return jsonify({'message': 'Usuario no encontrado.'}), 404
         
         # Comparar la contraseña
-        if not check_password_hash(user.password, password):
+        if not bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
             return jsonify({'message': 'Contraseña incorrecta.'}), 401
         
         return jsonify({'message': 'Autenticación exitosa.', 'user': user.to_dict()}), 200   

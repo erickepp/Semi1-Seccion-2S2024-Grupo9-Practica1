@@ -1,6 +1,6 @@
+import bcrypt
 from datetime import datetime
 from flask import request, jsonify
-from werkzeug.security import generate_password_hash
 from app.models.user import User
 from config.db_config import db
 from config.s3_config import S3
@@ -53,8 +53,11 @@ def register_user():
         # Subir archivo al bucket
         file_url = S3().upload_file(photo, f'Fotos/{photo.filename}')
 
+        # Encriptar la contraseña del usuario
+        hashed_password_bytes = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        hashed_password = hashed_password_bytes.decode('utf-8')
+
         # Crear y agregar el nuevo usuario a la base de datos
-        hashed_password = generate_password_hash(password)
         new_user = User(
             first_name=first_name,
             last_name=last_name,
@@ -88,7 +91,8 @@ def update_user(user_id):
         photo = request.files.get('photo')
 
         if password:
-            hashed_password = generate_password_hash(password)
+            hashed_password_bytes = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+            hashed_password = hashed_password_bytes.decode('utf-8')
             user.password = hashed_password
             user.confirm_password = hashed_password
 
