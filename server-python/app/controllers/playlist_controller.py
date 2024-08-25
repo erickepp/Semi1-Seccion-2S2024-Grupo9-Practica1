@@ -1,15 +1,17 @@
 from flask import request, jsonify
 from app.models.playlist import Playlist
+from app.models.user import User
 from config.db_config import db
 from config.s3_config import S3
 
 
 def get_playlists_by_user(user_id):
     try:
-        playlists = Playlist.query.filter_by(user_id=user_id).all()
-        if not playlists:
-            return jsonify([]), 404
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({'message': 'Usuario no encontrado.'}), 404
 
+        playlists = Playlist.query.filter_by(user_id=user_id).all()
         return jsonify([playlist.to_dict() for playlist in playlists]), 200
     except Exception as e:
         return jsonify({'message': f'Error interno del servidor: {str(e)}'}), 500
@@ -38,6 +40,11 @@ def register_playlist():
         # Validar la entrada
         if not all([name, description, user_id, background]):
             return jsonify({'message': 'Todos los campos son necesarios.'}), 400
+        
+        # Verificar si el usuario existe
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({'message': 'Usuario no encontrado.'}), 404
 
         # Subir fondo al bucket si se proporciona
         background_url = S3().upload_file(background, f'Fotos/{background.filename}')
