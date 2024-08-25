@@ -4,6 +4,7 @@ from config.db_config import init_db
 from app.routes import auth_routes
 from app.routes import user_routes
 from app.routes import song_routes
+from app.routes import playlist_routes
 
 def create_app():
     app = Flask(__name__)
@@ -15,5 +16,6 @@ def create_app():
     app.register_blueprint(auth_routes.bp)
     app.register_blueprint(user_routes.bp)
     app.register_blueprint(song_routes.bp)
+    app.register_blueprint(playlist_routes.bp)
 
     return app

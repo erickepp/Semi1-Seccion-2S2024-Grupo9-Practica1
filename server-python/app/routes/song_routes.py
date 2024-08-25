@@ -19,8 +19,8 @@ def post_song_route():
     return sc.register_song()
 
 
-@bp.route('/songs/<int:song_id>', methods=['PUT'])
-def put_song_route(song_id):
+@bp.route('/songs/<int:song_id>', methods=['PATCH'])
+def patch_song_route(song_id):
     return sc.update_song(song_id)
 
 

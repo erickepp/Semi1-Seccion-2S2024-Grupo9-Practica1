@@ -19,6 +19,6 @@ def post_user_route():
     return uc.register_user()
 
 
-@bp.route('/users/<int:user_id>', methods=['PUT'])
-def put_user_route(user_id):
+@bp.route('/users/<int:user_id>', methods=['PATCH'])
+def patch_user_route(user_id):
     return uc.update_user(user_id)
