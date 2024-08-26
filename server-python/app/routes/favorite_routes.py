@@ -14,7 +14,7 @@ def get_favorites_by_user_route():
 
 
 @bp.route('/favorites', methods=['POST'])
-def register_favorite_route():
+def post_favorite_route():
     return fc.register_favorite()
 
 

@@ -12,7 +12,13 @@ def get_favorites_by_user(user_id):
             return jsonify({'message': 'Usuario no encontrado.'}), 404
 
         favorites = Favorite.query.filter_by(user_id=user_id).all()
-        return jsonify([favorite.to_dict() for favorite in favorites]), 200
+        
+        # Crea una lista de canciones
+        songs = []
+        for favorite in favorites:
+            songs.append(favorite.to_dict().get('song'))
+
+        return jsonify({'user': user.to_dict(), 'songs': songs}), 200
     except Exception as e:
         return jsonify({'message': f'Error interno del servidor: {str(e)}'}), 500
 
