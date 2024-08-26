@@ -18,7 +18,7 @@ def post_favorite_route():
     return fc.register_favorite()
 
 
-# GET /favorites?song_id=value&user_id=value
+# DELETE /favorites?song_id=value&user_id=value
 @bp.route('/favorites', methods=['DELETE'])
 def delete_favorite_route():
     song_id = request.args.get('song_id')
