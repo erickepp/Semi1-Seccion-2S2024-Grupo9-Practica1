@@ -139,7 +139,7 @@
 ---
 
 **Método:** `GET`  
-**Ruta:** `/songs/playlists?user_id=value`  
+**Ruta:** `/song/playlists?user_id=value`  
 **Query Parameters:**  
 - `user_id` (requerido): El ID del usuario.  
 **Descripción:** Recupera todas las playlists y sus canciones asociadas para el usuario especificado.
@@ -162,7 +162,7 @@
 ---
 
 **Método:** `DELETE`  
-**Ruta:** `/songs/playlists?song_id=value&playlist_id=value`  
+**Ruta:** `/song/playlists?song_id=value&playlist_id=value`  
 **Query Parameters:**  
 - `song_id` (requerido): El ID de la canción a eliminar de la playlist.  
 - `playlist_id` (requerido): El ID de la playlist.  
