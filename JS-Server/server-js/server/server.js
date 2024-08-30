@@ -26,6 +26,11 @@ app.use('/', listaReproduccion);
 app.use('/', favoritos);
 app.use('/', playListCanciones);
 
+//Ruta Check
+app.get('/check', (req, res) => {
+    res.status(200).json({status:'OK'});
+});
+
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
