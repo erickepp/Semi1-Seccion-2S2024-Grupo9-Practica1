@@ -3,9 +3,9 @@ const mysql = require('mysql2');
 
 // Configuración de la conexión a la base de datos
 const db = mysql.createConnection({
-    host: '3.18.220.254',
+    host: 'practica1-semi1g9.cnsk26yc46hf.us-east-2.rds.amazonaws.com',
     user: 'admin',
-    password: '123',
+    password: 'RzOyOWBmo5I6I4044dxi',
     database: 'soundstream'
 });
 
