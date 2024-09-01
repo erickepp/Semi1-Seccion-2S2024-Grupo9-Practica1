@@ -1,7 +1,7 @@
 import bcrypt
 from flask import request, jsonify
 from app.models.user import User
-
+ 
 def authenticate():
     try:
         data = request.get_json()
