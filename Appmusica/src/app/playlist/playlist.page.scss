@@ -1,0 +1,16 @@
+ion-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ion-card {
+    width: 300px;
+}
+
+.rowCancion {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}

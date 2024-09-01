@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true" >
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>INGRESO</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-input fill="outline" [(ngModel)]="correo" label="Usuario" label-placement="floating"></ion-input>
+      <ion-input fill="outline" [(ngModel)]="pass" label="Contraseña" label-placement="floating" type="password"></ion-input>
+      <ion-label >{{mensaje}}</ion-label>
+      <ion-button shape="round" (click)="irInicio()">INGRESAR</ion-button>
+      <ion-button fill="clear" (click)="irRegistro()">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

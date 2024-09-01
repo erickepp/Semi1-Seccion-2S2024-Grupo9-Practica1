@@ -1,0 +1,26 @@
+ion-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-card {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+ion-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: stretch;
+    justify-content: space-around;
+    height: 250px;
+    width: 80%;
+    margin-left: 10%;
+}

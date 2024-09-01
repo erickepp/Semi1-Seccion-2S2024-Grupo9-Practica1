@@ -1,0 +1,31 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-img class="imgPerfil" [src]="picImage"></ion-img>
+    </ion-col>
+    <ion-col>
+      <ion-input type="file"  accept=".csv, text/plain" (change)="chooseFile($event)"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-input type="file"  accept=".csv, text/plain" (change)="chooseFile2($event)"></ion-input>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input fill="outline" [(ngModel)]="nameSong" label="Nombre" label-placement="floating"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input fill="outline" [(ngModel)]="artist" label="Artista" label-placement="floating"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input fill="outline" [(ngModel)]="duration" label="Duracion" label-placement="floating" ></ion-input>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+  <ion-row class="botonRow">
+    <ion-button shape="round" (click)="crear()" >Agregar Cancion</ion-button>
+  </ion-row>
+</ion-grid>

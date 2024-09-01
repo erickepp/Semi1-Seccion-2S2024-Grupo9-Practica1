@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Buscar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title size="large">buscar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row>
+    <ion-input label-placement="floating" [(ngModel)]="nameCancion" fill="outline" placeholder="Buscar" class="inputFind">
+    </ion-input>
+    <ion-button shape="round" (click)="buscarCancion()">BUSCAR</ion-button>
+  </ion-row>
+  <ion-grid>
+    <ion-card *ngFor="let cancion of listSongs">
+      <img [src]="cancion.photo" class="imgCancion" />
+      <ion-card-header>
+        <ion-card-title>{{cancion.name}}</ion-card-title>
+        <ion-card-subtitle>{{cancion.artist}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Duracion: {{cancion.duration}}
+      </ion-card-content>
+      <ion-row class="rowIcons">
+        <ion-icon name="play" size="large" (click)="reproducir(cancion.file)"></ion-icon>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row>
+    <ion-select placeholder="Seleccionar cancion">
+      <ion-select-option *ngFor="let cancion of listSongs" value="cancion.song_id">{{cancion.name}}</ion-select-option>
+    </ion-select>
+  </ion-row>
+  <ion-row>
+    <ion-button shape="round" (click)="agregar()" >Agregar Cancion</ion-button>
+  </ion-row>
+</ion-grid>
+
+

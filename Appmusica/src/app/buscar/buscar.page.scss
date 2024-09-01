@@ -1,0 +1,28 @@
+ion-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ion-card {
+    height: 300px;
+    width: 300px;
+}
+
+.rowIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgCancion {
+    height: 150px;
+    width: 100%;
+}
+
+.inputFind {
+    margin: 10px;
+}
