@@ -33,21 +33,24 @@ Para contener la base de datos se hizo uso del servicio RDS para manejar la base
 Se hizo uso de 3 usuarios IAM los cuales se estaran explicando acontinuación.
 
 1. Usuario Administrador_202002042
-![image](https://hackmd.io/_uploads/S1T_-IZhR.png)
+![image](https://github.com/user-attachments/assets/276eb6a6-7f7b-4af2-903e-4d94a94117b4)
+
 
 Este es el usuario de usos generales este usuario se creo con la finalidad de evitar el uso del usuraio root ya que eso es lo recomendado por la documentación de AWS
 
 Permisos: AdministratorAccess
 
 2. Usuario Bucket_user
-![image](https://hackmd.io/_uploads/rJz_fIWhA.png)
+![image](https://github.com/user-attachments/assets/aec4adea-1155-4c7b-8d39-e09bde8f694c)
+
 
 El usuario Bucket_user es el encargado de estar controlando los buckets, tanto desde la creacion como estar monitoreando que las canciones sean agregadas y las fotos tambien, si en dado caso se necesitara que los buckets sean eliminados este usuario seria el responsable de realizar esa gestión
 
 permisos: AmazonS3FullAccess
 
 3. Usuario Ec2_user
-![image](https://hackmd.io/_uploads/B1K0MI-3C.png)
+![image](https://github.com/user-attachments/assets/37a1c101-cab2-4b2d-801a-772a9d8ccb5a)
+
 
 El usuario Ec2_user es el encargado de llevar a cabo la gestión de la creacion de las instancias, monitoreas las instancias, encender las instancias, eliminar instancias y detener las instancias cada vez que sea necesario. Ademas de estas funcionalidades este usuario es el encargado de la creacion del balanceador de carga y de configurar dicho balanceador 
 
@@ -56,54 +59,67 @@ permisos: AmazonEC2FullAccess
 ### Imagenes con configuraciones
 Instancias creadas
 
-![image](https://hackmd.io/_uploads/SyIPXUZ3C.png)
+![image](https://github.com/user-attachments/assets/479e8aa1-2507-4f98-80d9-4674ae7bdbeb)
+
 
 Instancia Python en la cual se utilizaron dos grupos de seguridad una para la conexion SSH y la otra para el manejo de los puertos necesarios tales como el HTTP, HTTPS y el puerto 3000 haciendo uso de las caracteristicas de la capa gratuita
-![image](https://hackmd.io/_uploads/B1G6XUbn0.png)
+![image](https://github.com/user-attachments/assets/c575eab5-5b7e-4063-8f0f-741622658d41)
+
 
 Instancia NodeJS en la cual se utilizaron dos grupos de seguridad una para la conexion SSH y la otra para el manejo de los puertos necesarios tales como el HTTP, HTTPS y el puerto 3000 haciendo uso de las caracteristicas de la capa gratuita
-![image](https://hackmd.io/_uploads/HJ-VVUW30.png)
+![image](https://github.com/user-attachments/assets/5b733f21-559d-4ffd-b79b-d05ad32afd72)
+
 
 Balanceador de carga clasico, en el cual se configuró el endpoint check el cual servira para hacer los estados de comprobación y asi determinar si una instancia es optima para su  uso.
-![image](https://hackmd.io/_uploads/BJ2YEUWn0.png)
+![image](https://github.com/user-attachments/assets/1360a331-b941-4627-9ca2-4b93e9a0bef2)
+
 
 Acá podemos visualizar las instancias utilizadas para que trbaje el balanceador
-![image](https://hackmd.io/_uploads/SkwiVIZh0.png)
+![image](https://github.com/user-attachments/assets/d76d084d-7f5a-4105-95e4-a3c2144e26d0)
+
 
 estos son los tiempos utilizados para la comprobación de estado asi como la configuración de la ruta de ping la cual es el endpoint check.
 
-![image](https://hackmd.io/_uploads/H1DA4Ub3C.png)
+![image](https://github.com/user-attachments/assets/966b0a8e-fe16-473a-b59c-afe7967dfdee)
+
 
 Grupos de seguridad utilizados para el desarrollo de la aplicacion, se hizo uso unicamente de la configuración de reglas de entrada para limitar los puertos, ademas de dejar libre el origen para que sea accesible desde cualquier computadora. Acá la lista de grupos de seguridad
-![image](https://hackmd.io/_uploads/ByxrBIZhC.png)
+![image](https://github.com/user-attachments/assets/2160020b-a6cf-4bb1-9921-948833717aea)
+
 
 Configuración del grupo de seguridad Maquinas virtuales python y NodeJS donde se usan los puertos 443,80,3000
 
-![image](https://hackmd.io/_uploads/r1oDr8Z3R.png)
+![image](https://github.com/user-attachments/assets/bb8faaff-5cef-4d79-9fd7-540a3f6a282f)
+
 
 Configuración del grupo de seguridad SSH haciendo uso del puerto 22
 
-![image](https://hackmd.io/_uploads/rJEKrI-3R.png)
+![image](https://github.com/user-attachments/assets/d9643b17-5522-4176-9cff-282b6967418c)
+
 
 Coinfiguración del grupo de seguridad para la base de datos implementada en RDS haciendo uso unicamente del puerto 3306 que es el puerto por defecto para mysql
 
-![image](https://hackmd.io/_uploads/SJyhHI-3C.png)
+![image](https://github.com/user-attachments/assets/f00008ad-0fe3-4e84-acec-80ccb19e5e95)
+
 
 Para s3 se utilizaron dos buckets como bien se mencionó anteriormente uno es para toda la multimedia y el otro especificamente para el despliegue del frontend, esta es la captura de los buckets
 
-![image](https://hackmd.io/_uploads/rkGVUIWhC.png)
+![image](https://github.com/user-attachments/assets/9b905628-9a4b-4ec7-84bb-7cc17e099e5f)
+
 
 Configuración del bucket multimedia: unicamente se dejo habilitado el acceso publico y la configuración de una politica para poder utilizar la multimedia desde el frontend
 
-![image](https://hackmd.io/_uploads/BydvU8Z20.png)
+![image](https://github.com/user-attachments/assets/0b757e03-fa3e-49bb-989e-0dba2e373b88)
 
 Configuración del bucket frontend: al igual que el bucket multimedia en este solo se dejo con acceso publico y se habilitó el apartado para desplegar un sitio web estático
 
-![image](https://hackmd.io/_uploads/S1XALU-n0.png)
+![image](https://github.com/user-attachments/assets/78337035-90f0-4c8c-87cc-26fdca22ccbf)
+
 
 Para la configuración de RDS se hizo de la manera simple unicamente con las configuraciónes minimas necesarias tales como el puerto 3306, usuario "admin" y una contraseña generada automáticamente. Ademas de activar la opcion de "Accesible publicamente" para poder conectarnos desde cualquier direccion de ip, mas allá de eso nos limitamos a usar las funcionalidades por defecto aptas para la capa gratuita de AWS y configurar el grupo de seguridad correcto para evitar el creado por default
 
-![image9](https://hackmd.io/_uploads/S1q5w8bh0.png)
+![image](https://github.com/user-attachments/assets/ead88671-5ffa-45a4-8403-a94659ccdbba)
+
 
 ### Conclusiones
 
