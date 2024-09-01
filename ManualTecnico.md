@@ -26,7 +26,7 @@ RDS
 Para contener la base de datos se hizo uso del servicio RDS para manejar la base de datos, en nuestro caso utilizamos MySQL para el desarrollo de esta aplicacion por lo que se hizo uso de los settings por defecto tales como el puerto 3306, usuario admin y una contraseña proporcionada por amazon.
 ### Diagrama entidad relación
 
-![ERsoundstream](https://hackmd.io/_uploads/ryL-W8WnA.png)
+![image](https://github.com/user-attachments/assets/ae5ae3c6-45ec-479b-a839-6c59f12eecad)
 
 ### Usuarios IAM
 
