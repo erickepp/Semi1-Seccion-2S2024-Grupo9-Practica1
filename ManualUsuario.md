@@ -19,4 +19,34 @@ Tambien tenemos varias opciones como son la creacion de las playlists, agregar f
 
 #### Login
 
+![image](https://github.com/user-attachments/assets/dedba131-8b7f-4e62-bd47-40e48c1094cf)
+
+Tenemos el login donde podemos ingresar nuestro correo y contraseña para lograr ingresar. Si se tiene algun error se desplegara en esta misma pantalla. Tambien podemos ir a la pantalla de registro desde aqui. 
+
+#### Registro
+
+![image](https://github.com/user-attachments/assets/ffa4ae94-2382-4d94-9522-69723f0d77f5)
+
+En la pantalla de registro debemos llenar todos los campos que nos solicita como el nombre, la fecha de nacimiento y nuestra foto de perfil. Si se ingresa todo de forma correcta nos desplegara nos creara nuestro usuario. 
+
+#### Inicio
+
+![image](https://github.com/user-attachments/assets/d4a537c0-ca27-4da5-8e08-d1ef2a36d7f7)
+
+En el inicio encontramos nuestras canciones, podemos darles play para que el reproductor aparezca e inicie la musica. Tambien podemos agregar estas canciones a favoritos. 
+
+![image](https://github.com/user-attachments/assets/96a1e7d9-a74e-4f67-b649-730b98dc9fc0)
+
+Tambien tenemos el menu con el cual podemos movernos dentro de la aplicación. 
+
+#### Perfil
+
+![image](https://github.com/user-attachments/assets/73213cc4-09cd-4983-9ece-cc5175e23df5)
+
+En el perfil encontramos todos los datos que creamos en el registro, junto con la foto de perfil. De igual manera podemos hacer cambios en los mismos siempre y cuando coloquemos la contraseña correcta y la confirmación de la misma. 
+
+#### Playlist
+
+
+
 
