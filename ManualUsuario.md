@@ -47,6 +47,33 @@ En el perfil encontramos todos los datos que creamos en el registro, junto con l
 
 #### Playlist
 
+![image](https://github.com/user-attachments/assets/d80f1c4a-1eda-4c77-b968-c849d067b8c4)
 
+En la playlist encontramos todas las listas de reproduccion creadas. Podemos en los botones de la playlist, agregar una cancion, eliminar la playlist o editarla. Dentro del listado de canciones de cada lista, podemos reproducir una cancion o eliminarla de la lista. 
 
+![image](https://github.com/user-attachments/assets/251f3f61-5210-4290-ab79-721c0d9fa91a)
+
+Al presionar el boton con el simbolo + podemos agregar una nueva playlist a nuestra cuenta. Solo se deben llenar los campos que se solicitan. 
+
+#### Favoritos
+
+![image](https://github.com/user-attachments/assets/3645f2b0-9510-4dfd-a4ee-f27ca0f98fa3)
+
+En la pantalla de favoritos encontramos todas las canciones que hemos seleccionado como tal, y podemos eliminarlas de favoritos si lo deseamos.
+
+#### Buscar
+
+![image](https://github.com/user-attachments/assets/f9d0224c-9297-42f3-a6dd-8753e6c8d0de)
+
+En la pantalla de buscar, podemos escribir un nombre en el buscador de la parte superior y luego con el boton buscar, filtrar todas la canciones que coincidan. 
+
+#### Canciones
+
+![image](https://github.com/user-attachments/assets/b4efd907-5cc2-4d16-952d-ea129f007433)
+
+Esta opción solo esta disponible para el administrador. En esta pantalla podemos crear una cancion, editarla, eliminarla o reproducirla. Todas estas opciones solo son accesibles por el adiminstrador. 
+
+![image](https://github.com/user-attachments/assets/55f5c35d-7da6-4189-8ad5-860032713f8f)
+
+Desde la creacion debe subir una foto del album de la cancion y el archivo que contiene la musica. 
 
