@@ -11,17 +11,21 @@
  
  EC2
  ![Amazon EC2: Everything you need to know - DEV Community](https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsrrq6s1f12v8jhe2ubj.png)
+ 
  - Maquina virtual la cual contiene el backend  de python de la aplicacion haciendo uso de dos grupos de seguridad para permitir acceso unicamente a los puertos necesarios.
  - Mauina virtual la cual contiene el backend de NodeJS de la aplicacion este es el segundo servidor utilizado para el desarrollo del proyecto, igualmente se hizo uso de 2 grupos de seguridad uno para la conexion SSH y el otro para permitir el accesso a los puertos necesarios HTTP, HTTPS y el puerto 3000
  - Balanceador de carga: se Debido a que tenemos dos backend hacemos uso de un balanceador de carga para distribuir de una forma mas eficiente la carga  para evitar saturar un servidor y asi garantizar que los servidores estaran funcionando por un tiempo mas prolongado.
  
 S3
 ![What is Amazon S3?. An introduction to Amazon S3, with… | by Jovan S  Hernandez | Medium](https://miro.medium.com/v2/resize:fit:1160/0*PQM2oxNUUceATC30)
+
 - Bucket multimedia: Tenemos un bucket multimedia con acceso al publico para hacer la gestión de las imagenes y de las canciones utilizadas en la aplicacion, disponemos de dos carpetas una llamada "Fotos" la cual albergará las fotos de perfil y las fotos utilizadas para las canciones o albums, tenemos otra carpeta llamada "Canciones" la cual contiene todas las canciones utilizadas en la plataforma.
 RDS
 ![Toric + Amazon RDS | Data Integration](https://cdn.prod.website-files.com/601064f495f4b4967f921aa9/635884ad45bd4b4723f4bc39_202210-rds-logo.png)
+
 Para contener la base de datos se hizo uso del servicio RDS para manejar la base de datos, en nuestro caso utilizamos MySQL para el desarrollo de esta aplicacion por lo que se hizo uso de los settings por defecto tales como el puerto 3306, usuario admin y una contraseña proporcionada por amazon.
 ### Diagrama entidad relación
+
 ![ERsoundstream](https://hackmd.io/_uploads/ryL-W8WnA.png)
 
 ### Usuarios IAM
@@ -30,24 +34,28 @@ Se hizo uso de 3 usuarios IAM los cuales se estaran explicando acontinuación.
 
 1. Usuario Administrador_202002042
 ![image](https://hackmd.io/_uploads/S1T_-IZhR.png)
+
 Este es el usuario de usos generales este usuario se creo con la finalidad de evitar el uso del usuraio root ya que eso es lo recomendado por la documentación de AWS
 
 Permisos: AdministratorAccess
 
 2. Usuario Bucket_user
 ![image](https://hackmd.io/_uploads/rJz_fIWhA.png)
+
 El usuario Bucket_user es el encargado de estar controlando los buckets, tanto desde la creacion como estar monitoreando que las canciones sean agregadas y las fotos tambien, si en dado caso se necesitara que los buckets sean eliminados este usuario seria el responsable de realizar esa gestión
 
 permisos: AmazonS3FullAccess
 
 3. Usuario Ec2_user
 ![image](https://hackmd.io/_uploads/B1K0MI-3C.png)
+
 El usuario Ec2_user es el encargado de llevar a cabo la gestión de la creacion de las instancias, monitoreas las instancias, encender las instancias, eliminar instancias y detener las instancias cada vez que sea necesario. Ademas de estas funcionalidades este usuario es el encargado de la creacion del balanceador de carga y de configurar dicho balanceador 
 
 permisos: AmazonEC2FullAccess
 
 ### Imagenes con configuraciones
 Instancias creadas
+
 ![image](https://hackmd.io/_uploads/SyIPXUZ3C.png)
 
 Instancia Python en la cual se utilizaron dos grupos de seguridad una para la conexion SSH y la otra para el manejo de los puertos necesarios tales como el HTTP, HTTPS y el puerto 3000 haciendo uso de las caracteristicas de la capa gratuita
@@ -61,7 +69,9 @@ Balanceador de carga clasico, en el cual se configuró el endpoint check el cual
 
 Acá podemos visualizar las instancias utilizadas para que trbaje el balanceador
 ![image](https://hackmd.io/_uploads/SkwiVIZh0.png)
+
 estos son los tiempos utilizados para la comprobación de estado asi como la configuración de la ruta de ping la cual es el endpoint check.
+
 ![image](https://hackmd.io/_uploads/H1DA4Ub3C.png)
 
 Grupos de seguridad utilizados para el desarrollo de la aplicacion, se hizo uso unicamente de la configuración de reglas de entrada para limitar los puertos, ademas de dejar libre el origen para que sea accesible desde cualquier computadora. Acá la lista de grupos de seguridad
@@ -93,7 +103,7 @@ Configuración del bucket frontend: al igual que el bucket multimedia en este so
 
 Para la configuración de RDS se hizo de la manera simple unicamente con las configuraciónes minimas necesarias tales como el puerto 3306, usuario "admin" y una contraseña generada automáticamente. Ademas de activar la opcion de "Accesible publicamente" para poder conectarnos desde cualquier direccion de ip, mas allá de eso nos limitamos a usar las funcionalidades por defecto aptas para la capa gratuita de AWS y configurar el grupo de seguridad correcto para evitar el creado por default
 
-![image](https://hackmd.io/_uploads/S1q5w8bh0.png)
+![image9](https://hackmd.io/_uploads/S1q5w8bh0.png)
 
 ### Conclusiones
 
